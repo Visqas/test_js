@@ -19,7 +19,7 @@ describe('Calendar app scenarios', function(){
         page.quit();
     });
 
-    it('Typing a post', function(){
+    it('Change of post', function(){
         page.loginBtn();
         page.clickSubmit();
         page.driver.sleep(2000);
@@ -28,6 +28,9 @@ describe('Calendar app scenarios', function(){
         page.enterEventName();            
         page.clickSubmit();
         page.driver.sleep(2000);
+        page.changePost();
+        page.changeEvent();
+        page.clickSubmit();
         page.driver.findElement(By.linkText('exit')).click()
         page.driver.sleep(2000);
     });

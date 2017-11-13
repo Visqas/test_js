@@ -19,14 +19,11 @@ describe('Calendar app scenarios', function(){
         page.quit();
     });
 
-    it('Typing a post', function(){
+    it('Delete post', function(){
         page.loginBtn();
         page.clickSubmit();
         page.driver.sleep(2000);
-        page.newPost();
-        page.driver.sleep(2000);
-        page.enterEventName();            
-        page.clickSubmit();
+        page.removeEvent();
         page.driver.sleep(2000);
         page.driver.findElement(By.linkText('exit')).click()
         page.driver.sleep(2000);
