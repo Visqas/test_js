@@ -22,13 +22,13 @@ describe('Calendar app scenarios', function(){
     it('Typing a valid email enables login button', function(){
         page.loginBtn();
         page.driver.sleep(2000);
-            
         page.clickSubmit();
+        page.driver.sleep(2000);
         page.driver.findElement(By.linkText('exit')).click().
         page.driver.sleep(2000);
     });
 
-    it('Clicking Login button invitation triggers a confirmation alert', function(){
-        page.alertSuccess();
-    });
+//    it('Clicking Login button invitation triggers a confirmation alert', function(){
+//        page.alertSuccess();
+//    });
 });

@@ -2,7 +2,7 @@ var webdriver = require('selenium-webdriver'),
 By = webdriver.By,
 until = webdriver.until;
 var { describe, it, after, before } = require('selenium-webdriver/testing');
-var Page = require('../lib/app_manager.js');
+var Page = require('../lib/base_page.js');
 var page;
 
 
@@ -22,16 +22,17 @@ describe('Calendar app scenarios', function(){
     it('Change of post', function(){
         page.loginBtn();
         page.clickSubmit();
-        page.driver.sleep(2000);
+        page.sleep();
         page.newPost();
-        page.driver.sleep(2000);
+        page.sleep();
         page.enterEventName();            
         page.clickSubmit();
-        page.driver.sleep(2000);
+        page.sleep();
         page.changePost();
         page.changeEvent();
         page.clickSubmit();
-        page.driver.findElement(By.linkText('exit')).click()
-        page.driver.sleep(2000);
+        page.sleep();
+        page.getOut();
+        page.sleep();
     });
 });
